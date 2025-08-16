@@ -91,12 +91,12 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Button */}
         <div className="hidden lg:block">
-          <a
+          <Link
             href="#"
             className={`px-5 py-2.5 rounded-lg ${COLORS.bgPrimary} text-white font-medium hover:${COLORS.bgPrimaryDark} transition-all duration-200 transform hover:scale-105`}
           >
             Get Started
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -105,44 +105,52 @@ const Navbar: React.FC = () => {
         <div className="lg:hidden bg-[#FEF7EC] px-4 pt-4 pb-6">
           <ul className={`flex flex-col space-y-4 ${COLORS.textSecondary} font-medium`}>
             <li>
-              <a
+              <Link
                 href="/"
                 className={`block py-2 hover:${COLORS.textPrimary} transition-colors duration-200`}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/about"
                 className={`block py-2 hover:${COLORS.textPrimary} transition-colors duration-200`}
               >
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/services"
                 className={`block py-2 hover:${COLORS.textPrimary} transition-colors duration-200`}
               >
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/contact"
                 className={`block py-2 hover:${COLORS.textPrimary} transition-colors duration-200`}
               >
                 Contact
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className={`block px-5 py-2.5 rounded-lg ${COLORS.bgPrimary} text-white font-medium hover:${COLORS.bgPrimaryDark} transition-all duration-200 text-center`}
               >
                 Get Started
-              </a>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#"
+                className={`block px-5 py-2.5 rounded-lg ${COLORS.bgPrimary} text-white font-medium hover:${COLORS.bgPrimaryDark} transition-all duration-200 text-center`}
+              >
+                Get Started
+              </Link>
             </li>
           </ul>
         </div>

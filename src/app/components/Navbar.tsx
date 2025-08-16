@@ -47,10 +47,10 @@ const Navbar: React.FC = () => {
           </li>
           <li>
             <Link
-              href="/services"
+              href="/store"
               className={`hover:${COLORS.textPrimary} transition-colors duration-200 relative group`}
             >
-              Services
+              Products
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 ${COLORS.bgPrimary} group-hover:w-full transition-all duration-300`}></span>
             </Link>
           </li>
@@ -122,10 +122,10 @@ const Navbar: React.FC = () => {
             </li>
             <li>
               <Link
-                href="/services"
+                href="/store"
                 className={`block py-2 hover:${COLORS.textPrimary} transition-colors duration-200`}
               >
-                Services
+                Products
               </Link>
             </li>
             <li>
@@ -134,14 +134,6 @@ const Navbar: React.FC = () => {
                 className={`block py-2 hover:${COLORS.textPrimary} transition-colors duration-200`}
               >
                 Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#"
-                className={`block px-5 py-2.5 rounded-lg ${COLORS.bgPrimary} text-white font-medium hover:${COLORS.bgPrimaryDark} transition-all duration-200 text-center`}
-              >
-                Get Started
               </Link>
             </li>
             <li>

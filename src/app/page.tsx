@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
               AT THE BEST RATES
             </h2>
             <p className="text-gray-100 text-sm md:text-normal max-w-2xl mx-auto lg:mx-0 mb-5">
-              Little pets for a big heart. Fulfill all your pet's needs. The final stop for your pets.
+              Little pets for a big heart. Fulfill all your pet&apos;s needs. The final stop for your pets.
             </p>
             {/* CTA Button */}
             <ClickSpark

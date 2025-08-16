@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import COLORS from "../theme.js";
 import { Inter } from 'next/font/google'
+import Link from "next/link.js";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -27,40 +28,40 @@ const Navbar: React.FC = () => {
         {/* Desktop Menu */}
         <ul className={`hidden lg:flex space-x-8 ${COLORS.textSecondary} font-medium`}>
           <li>
-            <a
+            <Link
               href="/"
               className={`hover:${COLORS.textPrimary} transition-colors duration-200 relative group`}
             >
               Home
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 ${COLORS.bgPrimary} group-hover:w-full transition-all duration-300`}></span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/about"
               className={`hover:${COLORS.textPrimary} transition-colors duration-200 relative group`}
             >
               About
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 ${COLORS.bgPrimary} group-hover:w-full transition-all duration-300`}></span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/services"
               className={`hover:${COLORS.textPrimary} transition-colors duration-200 relative group`}
             >
               Services
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 ${COLORS.bgPrimary} group-hover:w-full transition-all duration-300`}></span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/contact"
               className={`hover:${COLORS.textPrimary} transition-colors duration-200 relative group`}
             >
               Contact
               <span className={`absolute -bottom-1 left-0 w-0 h-0.5 ${COLORS.bgPrimary} group-hover:w-full transition-all duration-300`}></span>
-            </a>
+            </Link>
           </li>
         </ul>
 

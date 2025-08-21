@@ -1,0 +1,80 @@
+export const dogGrooming = [
+  {
+    id: 1,
+    name: "Dog Shampoo",
+    brand: "PetCare",
+    category: "shampoo",
+    price: 249,
+    discountPrice: 199,
+    age: "all",
+    stock: 20,
+    availability: true,
+    rating: 4.6,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/dog-shampoo.jpg?v=1698230424"
+  },
+  {
+    id: 2,
+    name: "Dog Brush",
+    brand: "GroomMaster",
+    category: "brush",
+    price: 299,
+    discountPrice: 249,
+    age: "all",
+    stock: 15,
+    availability: true,
+    rating: 4.4,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/dog-brush.jpg?v=1698230424"
+  },
+  {
+    id: 3,
+    name: "Dog Nail Clipper",
+    brand: "PetCare",
+    category: "nail care",
+    price: 199,
+    discountPrice: 169,
+    age: "all",
+    stock: 18,
+    availability: true,
+    rating: 4.2,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/dog-nail-clipper.jpg?v=1698230424"
+  },
+  {
+    id: 4,
+    name: "Dog Ear Cleaner",
+    brand: "GroomMaster",
+    category: "ear care",
+    price: 279,
+    discountPrice: 229,
+    age: "all",
+    stock: 12,
+    availability: true,
+    rating: 4.5,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/dog-ear-cleaner.jpg?v=1698230424"
+  },
+  {
+    id: 5,
+    name: "Dog Dental Kit",
+    brand: "DentalPet",
+    category: "dental care",
+    price: 349,
+    discountPrice: 299,
+    age: "all",
+    stock: 10,
+    availability: true,
+    rating: 4.8,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/dog-dental-kit.jpg?v=1698230424"
+  },
+  {
+    id: 6,
+    name: "Dog Flea Comb",
+    brand: "PetCare",
+    category: "flea control",
+    price: 179,
+    discountPrice: 149,
+    age: "all",
+    stock: 25,
+    availability: true,
+    rating: 4.3,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/dog-flea-comb.jpg?v=1698230424"
+  }
+];

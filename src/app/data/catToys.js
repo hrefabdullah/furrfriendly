@@ -1,0 +1,80 @@
+export const catToys = [
+  {
+    id: 1,
+    name: "Interactive Feather Wand",
+    brand: "PetPlay",
+    category: "interactive",
+    price: 199,
+    discountedPrice: 149,
+    age: "all ages",
+    stock: 25,
+    availability: true,
+    rating: 4,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/cat-toy-feather-wand.jpg?v=1698230424"
+  },
+  {
+    id: 2,
+    name: "Catnip Mouse Toy",
+    brand: "CatJoy",
+    category: "plush",
+    price: 149,
+    discountedPrice: 99,
+    age: "all ages",
+    stock: 30,
+    availability: true,
+    rating: 5,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/cat-toy-mouse.jpg?v=1698230424"
+  },
+  {
+    id: 3,
+    name: "Laser Pointer Toy",
+    brand: "PetTech",
+    category: "interactive",
+    price: 299,
+    discountedPrice: 249,
+    age: "all ages",
+    stock: 15,
+    availability: true,
+    rating: 4,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/cat-toy-laser.jpg?v=1698230424"
+  },
+  {
+    id: 4,
+    name: "Cat Tunnel Toy",
+    brand: "PetPlay",
+    category: "activity",
+    price: 499,
+    discountedPrice: 399,
+    age: "all ages",
+    stock: 10,
+    availability: true,
+    rating: 5,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/cat-toy-tunnel.jpg?v=1698230424"
+  },
+  {
+    id: 5,
+    name: "Scratching Post",
+    brand: "CatJoy",
+    category: "scratching",
+    price: 799,
+    discountedPrice: 699,
+    age: "all ages",
+    stock: 8,
+    availability: true,
+    rating: 4,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/cat-toy-scratching-post.jpg?v=1698230424"
+  },
+  {
+    id: 6,
+    name: "Automatic Ball Roller",
+    brand: "PetTech",
+    category: "electronic",
+    price: 899,
+    discountedPrice: 799,
+    age: "all ages",
+    stock: 5,
+    availability: true,
+    rating: 4,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/cat-toy-ball-roller.jpg?v=1698230424"
+  }
+];

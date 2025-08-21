@@ -1,0 +1,80 @@
+export const dogToys = [
+  {
+    id: 1,
+    name: "Durable Chew Bone",
+    brand: "DogPlay",
+    category: "chew toys",
+    price: 249,
+    discountedPrice: 199,
+    age: "all ages",
+    stock: 20,
+    availability: true,
+    rating: 4,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/dog-toy-bone.jpg?v=1698230424"
+  },
+  {
+    id: 2,
+    name: "Tennis Ball Set",
+    brand: "PetActive",
+    category: "fetch toys",
+    price: 199,
+    discountedPrice: 149,
+    age: "all ages",
+    stock: 35,
+    availability: true,
+    rating: 5,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/dog-toy-tennis-balls.jpg?v=1698230424"
+  },
+  {
+    id: 3,
+    name: "Plush Squeaky Toy",
+    brand: "DogJoy",
+    category: "plush toys",
+    price: 299,
+    discountedPrice: 249,
+    age: "all ages",
+    stock: 15,
+    availability: true,
+    rating: 4,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/dog-toy-plush.jpg?v=1698230424"
+  },
+  {
+    id: 4,
+    name: "Interactive Treat Puzzle",
+    brand: "DogSmart",
+    category: "interactive",
+    price: 499,
+    discountedPrice: 399,
+    age: "all ages",
+    stock: 10,
+    availability: true,
+    rating: 5,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/dog-toy-puzzle.jpg?v=1698230424"
+  },
+  {
+    id: 5,
+    name: "Rope Tug Toy",
+    brand: "DogPlay",
+    category: "tug toys",
+    price: 349,
+    discountedPrice: 299,
+    age: "all ages",
+    stock: 18,
+    availability: true,
+    rating: 4,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/dog-toy-rope.jpg?v=1698230424"
+  },
+  {
+    id: 6,
+    name: "Frisbee Disc",
+    brand: "PetActive",
+    category: "fetch toys",
+    price: 249,
+    discountedPrice: 199,
+    age: "all ages",
+    stock: 22,
+    availability: true,
+    rating: 4,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/dog-toy-frisbee.jpg?v=1698230424"
+  }
+];

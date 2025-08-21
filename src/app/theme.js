@@ -1,12 +1,12 @@
 // theme.js
 
 const COLORS = {
-  bgPrimary: "bg-[#1E40AF]",        // dark blue
-  bgPrimaryDark: "bg-[#1E3A8A]",    // darker blue for hover
-  textPrimary: "text-[#1E40AF]",    // text primary
-  textSecondary: "text-[#6B7280]",  // gray-500
-  textNeutral: "text-[#F3F4F6]",    // gray-100
-  bgNeutral: "bg-[#FEF7EC]",        // gray-50
+  bgPrimary: "bg-[#E53E3E]",        // red
+  bgPrimaryDark: "bg-[#C53030]",    // darker red for hover
+  textPrimary: "text-[#2B6CB0]",    // blue
+  textSecondary: "text-[#000000]",  // black
+  textNeutral: "text-[#FFFFFF]",    // white
+  bgNeutral: "bg-[#F7FAFC]",        // light background
 };
 
 export default COLORS;

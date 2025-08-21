@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import COLORS from "../theme.js";
 import { Inter } from 'next/font/google'
-import Link from "next/link.js";
+import Link from "next/link";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -92,10 +92,10 @@ const Navbar: React.FC = () => {
         {/* Desktop Button */}
         <div className="hidden lg:block">
           <Link
-            href="#"
+            href="/store"
             className={`px-5 py-2.5 rounded-lg ${COLORS.bgPrimary} text-white font-medium hover:${COLORS.bgPrimaryDark} transition-all duration-200 transform hover:scale-105`}
           >
-            Get Started
+            Shop Now
           </Link>
         </div>
       </div>

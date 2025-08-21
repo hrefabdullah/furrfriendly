@@ -23,16 +23,16 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link href="/" className={`transition`}>Home</Link>
+                <Link href="/" className={`transition hover:text-[#E53E3E]`}>Home</Link>
               </li>
               <li>
-                <Link href="/about" className={` transition`}>About</Link>
+                <Link href="/about" className={`transition hover:text-[#E53E3E]`}>About</Link>
               </li>
               <li>
-                <Link href="/services" className={`transition`}>Services</Link>
+                <Link href="/store" className={`transition hover:text-[#E53E3E]`}>Store</Link>
               </li>
               <li>
-                <Link href="/contact" className={`transition`}>Contact</Link>
+                <Link href="/contact" className={`transition hover:text-[#E53E3E]`}>Contact</Link>
               </li>
             </ul>
           </div>

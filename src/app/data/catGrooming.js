@@ -1,0 +1,80 @@
+export const catGrooming = [
+  {
+    id: 1,
+    name: "Cat Shampoo",
+    brand: "PetCare",
+    category: "shampoo",
+    price: 199,
+    discountPrice: 149,
+    age: "all",
+    stock: 15,
+    availability: true,
+    rating: 4.5,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/cat-shampoo.jpg?v=1698230424"
+  },
+  {
+    id: 2,
+    name: "Cat Brush",
+    brand: "GroomMaster",
+    category: "brush",
+    price: 249,
+    discountPrice: 199,
+    age: "all",
+    stock: 20,
+    availability: true,
+    rating: 4.2,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/cat-brush.jpg?v=1698230424"
+  },
+  {
+    id: 3,
+    name: "Nail Clipper",
+    brand: "PetCare",
+    category: "nail care",
+    price: 179,
+    discountPrice: 149,
+    age: "all",
+    stock: 18,
+    availability: true,
+    rating: 4.0,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/cat-nail-clipper.jpg?v=1698230424"
+  },
+  {
+    id: 4,
+    name: "Cat Ear Cleaner",
+    brand: "GroomMaster",
+    category: "ear care",
+    price: 229,
+    discountPrice: 189,
+    age: "all",
+    stock: 12,
+    availability: true,
+    rating: 4.3,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/cat-ear-cleaner.jpg?v=1698230424"
+  },
+  {
+    id: 5,
+    name: "Dental Kit",
+    brand: "DentalPet",
+    category: "dental care",
+    price: 299,
+    discountPrice: 249,
+    age: "all",
+    stock: 10,
+    availability: true,
+    rating: 4.7,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/cat-dental-kit.jpg?v=1698230424"
+  },
+  {
+    id: 6,
+    name: "Flea Comb",
+    brand: "PetCare",
+    category: "flea control",
+    price: 149,
+    discountPrice: 119,
+    age: "all",
+    stock: 25,
+    availability: true,
+    rating: 4.1,
+    img: "https://cdn.shopify.com/s/files/1/0565/8021/0861/files/cat-flea-comb.jpg?v=1698230424"
+  }
+];

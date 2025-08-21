@@ -13,9 +13,9 @@ const PawPattern = () => {
           <Image
             src="/assets/pawprint.png"
             alt="cat"
-            className="rounded-lg w-3 h-3 invert"
-            layout="fill"
-            objectFit="contain"
+            className="rounded-lg w-3 h-3 p-1 invert text-red-500"
+            fill
+            style={{ objectFit: "contain" }}
           />
         </div>
       ))}

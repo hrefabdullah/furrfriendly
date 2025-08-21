@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import COLORS from '../theme';
+// import COLORS from '../theme';
 
 // Define category data
 const categories = [

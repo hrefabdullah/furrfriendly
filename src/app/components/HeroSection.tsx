@@ -13,7 +13,7 @@ const inter = Inter({
 const Hero = () => {
   return (
     <section
-      className={`relative overflow-hidden bg-[#fff5b2] h-max max-h-[90vh] ${inter.className}`}
+      className={`relative overflow-hidden bg-[#fff5b2] h-max max-h-[95vh] ${inter.className}`}
     >
       <div className="max-w-[80vw] sm:max-w-[85vw] lg:max-w-[100vw] mx-auto px-4 sm:px-0 lg:px-0">
         {/* <PawPattern  /> */}

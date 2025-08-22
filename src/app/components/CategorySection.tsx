@@ -15,7 +15,7 @@ export default function CategorySection() {
     <section className="py-12 bg-white text-black" aria-label="category">
       <div className="container mx-auto px-7">
         <h2 className="text-3xl font-bold mb-6">
-          <span className="text-red-500">Top</span> categories
+          <span className="text-[#f4b916]">Top</span> categories
         </h2>
         <ul
           className="grid grid-cols-2 gap-6 sm:flex sm:space-x-8 sm:overflow-x-auto sm:snap-x sm:snap-mandatory"

@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex justify-between items-center h-16 md:h-20">
         {/* Logo */}
         <div className={`text-2xl font-extrabold ${COLORS.textPrimary} tracking-tight`}>
-          <span className="text-red-500 hover:text-red-600 cursor-pointer">FurrFriendly</span>
+          <Link href={'/'} className="text-[#f4b916] cursor-pointer">FurrFriendly</Link>
         </div>
 
         {/* Desktop Menu */}
@@ -93,7 +93,7 @@ const Navbar: React.FC = () => {
         <div className="hidden lg:block">
           <Link
             href="/store"
-            className={`px-5 py-2.5 rounded-lg ${COLORS.bgPrimary} text-white font-medium hover:${COLORS.bgPrimaryDark} transition-all duration-200 transform hover:scale-105`}
+            className={`px-5 py-2.5 rounded-lg bg-[#f4b916] text-white font-medium hover:${COLORS.bgPrimaryDark} transition-all duration-200 transform hover:scale-105`}
           >
             Shop Now
           </Link>

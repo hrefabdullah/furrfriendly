@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-// import COLORS from '../theme';
+import COLORS from '../theme';
 
 // Define category data
 const categories = [
@@ -36,7 +36,7 @@ const deals = [
     id: 1,
     title: 'Summer Sale',
     description: 'Up to 40% off on selected items',
-    image: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1550085146-e2181eb8fb82?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmFieSUyMGRvZ3xlbnwwfHwwfHx8MA%3D%3D',
     link: '/store/deals'
   },
   {
@@ -54,7 +54,7 @@ export default function StorePage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-[#E53E3E] mb-4">Our Pet Store</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Pet Store</h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Browse our complete collection of premium pet products for your furry friends
           </p>
@@ -62,7 +62,7 @@ export default function StorePage() {
 
         {/* Special Deals */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-[#2B6CB0] mb-8">Special Deals</h2>
+          <h2 className="text-3xl font-bold text-gray-900  mb-8">Special Deals</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {deals.map((deal) => (
               <div 
@@ -80,7 +80,7 @@ export default function StorePage() {
                   <p className="mb-4">{deal.description}</p>
                   <Link 
                     href={deal.link}
-                    className="inline-block bg-[#E53E3E] text-white px-6 py-2 rounded-md hover:bg-red-700 transition"
+                    className="inline-block border-1 text-white px-6 py-2 rounded-xl transition"
                   >
                     Shop Now
                   </Link>
@@ -94,10 +94,10 @@ export default function StorePage() {
         {categories.map((category) => (
           <div key={category.id} className="mb-16">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-bold text-[#2B6CB0]">{category.title}</h2>
+              <h2 className="text-3xl font-bold text-gray-900">{category.title}</h2>
               <Link 
                 href={`/store/${category.subcategories[0].id}`}
-                className="text-[#E53E3E] font-medium hover:underline"
+                className="text-gray-700 font-medium hover:underline"
               >
                 View All
               </Link>
@@ -137,9 +137,6 @@ export default function StorePage() {
                     </div>
                   </div>
                   <div className="text-center">
-                    <span className="inline-block bg-[#E53E3E] text-white px-4 py-2 rounded-md hover:bg-red-700 transition">
-                      Shop {subcategory.name}
-                    </span>
                   </div>
                 </Link>
               ))}

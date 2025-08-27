@@ -46,11 +46,11 @@ const ProductPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <nav className="flex mb-8 text-sm text-gray-500">
-          <a href="/" className="hover:text-red-500">Home</a>
+          <a href="/" className="hover:text-gray-800">Home</a>
           <span className="mx-2">/</span>
-          <a href="/store" className="hover:text-red-500">Store</a>
+          <a href="/store" className="hover:text-gray-800">Store</a>
           <span className="mx-2">/</span>
-          <a href={`/store/${category}`} className="hover:text-red-500 capitalize">{category.replace(/([A-Z])/g, ' $1').trim()}</a>
+          <a href={`/store/${category}`} className="hover:text-gray-800 capitalize">{category.replace(/([A-Z])/g, ' $1').trim()}</a>
           <span className="mx-2">/</span>
           <span className="text-gray-900 font-medium">{product.name}</span>
         </nav>
@@ -59,14 +59,14 @@ const ProductPage = () => {
           <div className="flex flex-col lg:flex-row">
             {/* Product Images */}
             <div className="lg:w-1/2 p-6">
-              <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden mb-4 shadow-md hover:shadow-xl transition-shadow duration-300">
+              <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden mb-4 transition-shadow duration-300">
                 <img
                   src={product.img}
                   alt={product.name}
                   className="w-full h-full object-cover transition-transform duration-500"
                 />
                 {(product.discountedPrice ?? product.discountPrice) && (
-                  <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                  <div className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold">
                     SALE
                   </div>
                 )}
@@ -79,7 +79,7 @@ const ProductPage = () => {
                 <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
                   {product.brand}
                 </span>
-                <span className="bg-blue-100 text-blue-800 text-xs font-medium ml-2 px-2.5 py-0.5 rounded-full capitalize">
+                <span className="bg-blue-100 text-gray-800 text-xs font-medium ml-2 px-2.5 py-0.5 rounded-full capitalize">
                   {product.category}
                 </span>
                 <span className="bg-purple-100 text-purple-800 text-xs font-medium ml-2 px-2.5 py-0.5 rounded-full capitalize">
@@ -102,7 +102,7 @@ const ProductPage = () => {
               </div>
               
               <div className="flex items-baseline mb-6">
-                <span className="text-3xl font-bold text-red-600">₹{(product.discountedPrice ?? product.discountPrice) || product.price}</span>
+                <span className="text-3xl font-bold text-gray-900">₹{(product.discountedPrice ?? product.discountPrice) || product.price}</span>
                 {(product.discountedPrice ?? product.discountPrice) && (
                   <span className="line-through text-gray-400 ml-3">₹{product.price}</span>
                 )}
@@ -146,7 +146,7 @@ const ProductPage = () => {
               </div> */}
               
               <div className="flex space-x-4">
-                <button className="flex-1 bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-md font-medium transition duration-300 flex items-center justify-center">
+                <button className="flex-1 bg-gray-900 hover:bg-red-700 text-white py-3 px-6 rounded-md font-medium transition duration-300 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>

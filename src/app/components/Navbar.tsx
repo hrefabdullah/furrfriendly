@@ -19,10 +19,10 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className={`bg-[#fff] ${inter.className} shadow-md sticky top-0 z-50 backdrop-blur-sm`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex justify-between items-center h-16 md:h-20">
+      <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-10 flex justify-between items-center h-16 md:h-20">
         {/* Logo */}
         <div className={`text-2xl font-extrabold ${COLORS.textPrimary} tracking-tight`}>
-          <Link href={'/'} className="text-[#f4b916] cursor-pointer">FurrFriendly</Link>
+          <Link href={'/'} className="text-gray-900 cursor-pointer">FurrFriendly</Link>
         </div>
 
         {/* Desktop Menu */}
@@ -93,7 +93,7 @@ const Navbar: React.FC = () => {
         <div className="hidden lg:block">
           <Link
             href="/store"
-            className={`px-5 py-2.5 rounded-lg bg-[#f4b916] text-white font-medium hover:${COLORS.bgPrimaryDark} transition-all duration-200 transform hover:scale-105`}
+            className={`px-5 py-2.5 rounded-lg bg-gray-800 text-white font-medium  transition-all duration-200 transform hover:scale-105`}
           >
             Shop Now
           </Link>
@@ -102,12 +102,12 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-[#FEF7EC] px-4 pt-4 pb-6">
+        <div className="lg:hidden px-4 pt-4 pb-6">
           <ul className={`flex flex-col space-y-4 ${COLORS.textSecondary} font-medium`}>
             <li>
               <Link
                 href="/"
-                className={`block py-2 hover:${COLORS.textPrimary} transition-colors duration-200`}
+                className={`block py-2 } transition-colors duration-200`}
               >
                 Home
               </Link>
@@ -115,7 +115,7 @@ const Navbar: React.FC = () => {
             <li>
               <Link
                 href="/about"
-                className={`block py-2 hover:${COLORS.textPrimary} transition-colors duration-200`}
+                className={`block py-2 transition-colors duration-200`}
               >
                 About
               </Link>
@@ -123,7 +123,7 @@ const Navbar: React.FC = () => {
             <li>
               <Link
                 href="/store"
-                className={`block py-2 hover:${COLORS.textPrimary} transition-colors duration-200`}
+                className={`block py-2 transition-colors duration-200`}
               >
                 Products
               </Link>
@@ -131,7 +131,7 @@ const Navbar: React.FC = () => {
             <li>
               <Link
                 href="/contact"
-                className={`block py-2 hover:${COLORS.textPrimary} transition-colors duration-200`}
+                className={`block py-2 transition-colors duration-200`}
               >
                 Contact
               </Link>
@@ -139,7 +139,7 @@ const Navbar: React.FC = () => {
             <li>
               <Link
                 href="#"
-                className={`block px-5 py-2.5 rounded-lg ${COLORS.bgPrimary} text-white font-medium hover:${COLORS.bgPrimaryDark} transition-all duration-200 text-center`}
+                className={`block px-5 py-2.5 rounded-lg bg-gray-900 text-white font-medium transition-all duration-200 text-center`}
               >
                 Get Started
               </Link>

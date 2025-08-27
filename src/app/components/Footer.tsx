@@ -4,14 +4,14 @@ import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
-    <footer className={` ${COLORS.textSecondary} ${COLORS.bgNeutral} border-t pt-5`}>
+    <footer className={`bg-gray-200 text-gray-900  pt-5`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Grid layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo & About */}
           <div>
-            <h2 className={`text-xl font-bold ${COLORS.textPrimary}`}>FurrFriendly</h2>
-            <p className={`mt-2 text-sm`}>
+            <h2 className={`text-3xl font-bold }`}>FurrFriendly</h2>
+            <p className={`mt-2 text-sm text-gray-900 opacity-60`}>
               The one-stop shop for all your pet needs.
             </p>
           </div>
@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
             <h3 className={`text-sm font-semibold uppercase tracking-wider`}>
               Quick Links
             </h3>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-4 text-sm space-y-2">
               <li>
                 <Link href="/" className={`transition hover:text-[#E53E3E]`}>Home</Link>
               </li>

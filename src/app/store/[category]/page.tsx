@@ -2,13 +2,11 @@ import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
 import StorePage from "../../components/StorePage"
 
-interface PageProps {
-  params: {
-    category: string
-  }
-}
-
-export default function Page({ params }: PageProps) {
+export default async function Page({
+  params,
+}: {
+  params: { category: string }
+}) {
   return (
     <div>
       <Navbar />

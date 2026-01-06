@@ -1,8 +1,7 @@
 import crypto from "crypto";
 import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/db";
-import Order from "../../../../models/Order";
-import Product from "../../../../models/Product";
+import Order from "@/models/Order";
 
 export const runtime = "nodejs";
 

@@ -1,16 +1,15 @@
 import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
 import StorePage from "../../components/StorePage"
+import { useParams } from "next/navigation"
 
-export default async function Page({
-  params,
-}: {
-  params: { category: string }
-}) {
+export default function Page() {
+  const { category } = useParams()
+
   return (
     <div>
       <Navbar />
-      <StorePage category={params.category} />
+      <StorePage category={category} />
       <Footer />
     </div>
   )

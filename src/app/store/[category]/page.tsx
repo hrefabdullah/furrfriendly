@@ -1,16 +1,19 @@
-import React from 'react'
-import StorePage from '../../components/StorePage'
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Navbar from "../../components/Navbar"
+import Footer from "../../components/Footer"
+import StorePage from "../../components/StorePage"
 
-const Page = () => {
+interface PageProps {
+  params: {
+    category: string
+  }
+}
+
+export default function Page({ params }: PageProps) {
   return (
     <div>
-      <Navbar /> 
-      <StorePage />
+      <Navbar />
+      <StorePage category={params.category} />
       <Footer />
     </div>
   )
 }
-
-export default Page

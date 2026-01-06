@@ -1,231 +1,219 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
-import { useParams } from "next/navigation";
-import { catFood } from "../data/catFood";
-import { dogFood } from "../data/dogFood";
-import { catToys } from "../data/catToys";
-import { dogToys } from "../data/dogToys";
-import { catGrooming } from "../data/catGrooming";
-import { dogGrooming } from "../data/dogGrooming";
+import React, { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 
-const dataMap = { catFood, dogFood, catToys, dogToys, catGrooming, dogGrooming };
+const StorePage = ({ category }) => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-const StorePage = () => {
-  const params = useParams();
-  const category = Array.isArray(params.category) ? params.category[0] : params.category;
-  const products = dataMap[category] || [];
-
-  // Filter states
+  // Filters
   const [selectedBrand, setSelectedBrand] = useState("");
   const [selectedAge, setSelectedAge] = useState("");
   const [selectedType, setSelectedType] = useState("");
   const [maxPrice, setMaxPrice] = useState(5000);
-  const [showFilters, setShowFilters] = useState(false);
 
+  // Fetch products from API
+  useEffect(() => {
+    setLoading(true);
+    fetch(`/api/products?category=${category}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
+  }, [category]);
+
+  // Generate filter options dynamically
   const brands = useMemo(
-    () => [...new Set(products.map(p => p.brand || "Unknown"))],
+    () => [...new Set(products.map((p) => p.brand || "Unknown"))],
     [products]
   );
   const ages = useMemo(
-    () => [...new Set(products.map(p => p.age || "Adult"))],
+    () => [...new Set(products.map((p) => p.for || "Adult"))],
     [products]
   );
   const types = useMemo(
-    () => [...new Set(products.map(p => p.category || "Dry"))],
+    () => [...new Set(products.map((p) => p.type || "Other"))],
     [products]
   );
 
-  const filteredProducts = products.filter(p => {
+  // Filter products
+  const filteredProducts = products.filter((p) => {
     const withinPrice = p.price <= maxPrice;
     const matchesBrand = selectedBrand ? p.brand === selectedBrand : true;
-    const matchesAge = selectedAge ? p.age === selectedAge : true;
-    const matchesType = selectedType ? p.category === selectedType : true;
+    const matchesAge = selectedAge ? p.for === selectedAge : true;
+    const matchesType = selectedType ? p.type === selectedType : true;
     return withinPrice && matchesBrand && matchesAge && matchesType;
   });
 
+  if (loading)
+    return (
+      <p className="text-center mt-10 text-gray-500">Loading products...</p>
+    );
+
   return (
-    <div className="bg-white min-h-screen py-8 px-4 lg:px-50">
-      {/* Heading */}
-      <div className="mb-5 p-4 rounded">
-        <h1 className="text-3xl font-bold text-center capitalize text-gray-900">{category.replace(/([A-Z])/g, " $1")}</h1>
-        {/* Mobile Filters Dropdown */}
-        <div className="mt-3 lg:hidden">
-          <button
-            onClick={() => setShowFilters(prev => !prev)}
-            className="px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-700 transition w-full"
-          >
-            {showFilters ? "Hide Filters" : "Show Filters"}
-          </button>
-          {showFilters && (
-            <div className="mt-3 border rounded-lg p-3 bg-white shadow-sm">
-              {/* Price */}
-              <div className="mb-6">
-                <label className="mb-2 block font-medium text-gray-800">
-                  Max Price: ₹{maxPrice}
-                </label>
-                <input
-                  type="range"
-                  min="0"
-                  max="5000"
-                  value={maxPrice}
-                  onChange={e => setMaxPrice(Number(e.target.value))}
-                  className="
-                  w-full 
-                  appearance-none 
-                  h-2 
-                  rounded-lg 
-                  bg-gray-900 
-                  accent-gray-900
-                "
-                />
-              </div>
+    <div className="bg-gray-50 min-h-screen py-12 px-4 lg:px-16">
+      <h1 className="text-3xl font-bold text-gray-900 text-center capitalize mb-8">
+        {category}
+      </h1>
 
-              {/* Brand */}
-              <div className="flex flex-col mb-3">
-                <label className="mb-1 font-medium text-gray-900">Brand</label>
-                <select
-                  value={selectedBrand}
-                  onChange={e => setSelectedBrand(e.target.value)}
-                  className="border rounded px-2 py-2 text-gray-800"
-                >
-                  <option value="">All</option>
-                  {brands.map(brand => (
-                    <option key={brand} value={brand}>{brand}</option>
-                  ))}
-                </select>
-              </div>
-              {/* Age */}
-              <div className="flex flex-col mb-3">
-                <label className="mb-1 font-medium text-gray-700">Age</label>
-                <select
-                  value={selectedAge}
-                  onChange={e => setSelectedAge(e.target.value)}
-                  className="border rounded px-2 py-2 text-gray-800"
-                >
-                  <option value="">All</option>
-                  {ages.map(age => (
-                    <option key={age} value={age}>{age}</option>
-                  ))}
-                </select>
-              </div>
-              {/* Type */}
-              <div className="flex flex-col">
-                <label className="mb-1 font-medium text-gray-700">Type</label>
-                <select
-                  value={selectedType}
-                  onChange={e => setSelectedType(e.target.value)}
-                  className="border rounded px-2 py-2 text-gray-800"
-                >
-                  <option value="">All</option>
-                  {types.map(type => (
-                    <option key={type} value={type}>{type}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
+      <div className="lg:flex lg:gap-8">
+        {/* Sidebar Filters */}
+        <aside className="text-black hidden lg:block lg:w-72 sticky top-24 h-fit bg-white p-6 rounded-xl shadow-sm">
+          <h2 className="text-xl font-semibold mb-4">Filters</h2>
 
-      {/* Layout */}
-      <div className="lg:grid lg:grid-cols-12 lg:gap-8">
-        {/* Sidebar (lg+) */}
-        <aside className="hidden lg:block lg:col-span-3">
-          <div className="border rounded-xl p-4 bg-white shadow-sm sticky top-24">
-            <h2 className="text-xl font-semibold mb-4 text-gray-900">Filters</h2>
-            {/* Price */}
-            <div className="mb-6">
-              <label className="mb-2 block font-medium text-gray-800">Max Price: ₹{maxPrice}</label>
-              <input
-                type="range"
-                min="0"
-                max="5000"
-                value={maxPrice}
-                onChange={e => setMaxPrice(Number(e.target.value))}
-                className="w-full"
-              />
-            </div>
-            {/* Brand */}
-            <div className="mb-4">
-              <label className="mb-2 block font-medium text-gray-800">Brand</label>
-              <select
-                value={selectedBrand}
-                onChange={e => setSelectedBrand(e.target.value)}
-                className="w-full border rounded px-3 py-2 text-gray-800"
-              >
-                <option value="">All</option>
-                {brands.map(brand => (
-                  <option key={brand} value={brand}>{brand}</option>
-                ))}
-              </select>
-            </div>
-            {/* Age */}
-            <div className="mb-4">
-              <label className="mb-2 block font-medium text-gray-800">Age</label>
-              <select
-                value={selectedAge}
-                onChange={e => setSelectedAge(e.target.value)}
-                className="w-full border rounded px-3 py-2 text-gray-800"
-              >
-                <option value="">All</option>
-                {ages.map(age => (
-                  <option key={age} value={age}>{age}</option>
-                ))}
-              </select>
-            </div>
-            {/* Type */}
-            <div>
-              <label className="mb-2 block font-medium text-gray-800">Type</label>
-              <select
-                value={selectedType}
-                onChange={e => setSelectedType(e.target.value)}
-                className="w-full border rounded px-3 py-2 text-gray-800"
-              >
-                <option value="">All</option>
-                {types.map(type => (
-                  <option key={type} value={type}>{type}</option>
-                ))}
-              </select>
-            </div>
+          {/* Price Slider */}
+          <div className="mb-4">
+            <label className="block font-medium mb-1">
+              Max Price: ₹{maxPrice}
+            </label>
+            <input
+              type="range"
+              min="0"
+              max="5000"
+              value={maxPrice}
+              onChange={(e) => setMaxPrice(Number(e.target.value))}
+              className="w-full"
+            />
+          </div>
+
+          {/* Brand */}
+          <div className="mb-4">
+            <label className="block font-medium mb-1">Brand</label>
+            <select
+              value={selectedBrand}
+              onChange={(e) => setSelectedBrand(e.target.value)}
+              className="w-full border rounded px-3 py-2"
+            >
+              <option value="">All</option>
+              {brands.map((brand) => (
+                <option key={brand} value={brand}>
+                  {brand}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Age / For */}
+          <div className="mb-4">
+            <label className="block font-medium mb-1">Age</label>
+            <select
+              value={selectedAge}
+              onChange={(e) => setSelectedAge(e.target.value)}
+              className="w-full border rounded px-3 py-2"
+            >
+              <option value="">All</option>
+              {ages.map((age) => (
+                <option key={age} value={age}>
+                  {age}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Type */}
+          <div>
+            <label className="block font-medium mb-1">Type</label>
+            <select
+              value={selectedType}
+              onChange={(e) => setSelectedType(e.target.value)}
+              className="w-full border rounded px-3 py-2"
+            >
+              <option value="">All</option>
+              {types.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
           </div>
         </aside>
 
-        {/* Products (main) */}
-        <div className="lg:col-span-9">
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-            {filteredProducts.map(product => (
+        {/* Product Grid */}
+        <div className="flex-1 mt-6 lg:mt-0">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+            {filteredProducts.map((product) => (
               <Link
-                key={`${product.id}`}
-                href={`/store/${category}/${product.id}`}
-                className="border rounded-xl p-2 flex flex-col items-center bg-gray-50 hover:shadow-lg transition group"
+                key={product._id}
+                href={`/store/${category}/${product._id}`}
+                className="bg-white rounded-xl shadow hover:shadow-lg transition flex flex-col items-center p-3"
               >
+                {/* Product Image */}
                 <div className="w-full aspect-square bg-gray-100 rounded-lg overflow-hidden">
                   <img
-                    src={product.img}
+                    src={product.img1}
                     alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-lg font-semibold text-center mt-2 text-gray-900">{product.name}</h3>
-                <div className="flex gap-2">
-                  <p className="bg-blue-100 h-max w-max lg:px-3 px-2 text-xs lg:text-sm py-0.5 rounded-full  text-gray-600 text-sm">{product.age}</p>
-                  <p className="bg-red-100 h-max w-max lg:px-3 px-2 text-xs lg:text-sm py-0.5 rounded-full text-gray-600 text-sm">{product.category}</p>
-                </div>
-                <div className="flex items-center gap-2 mt-1">
-                  <p className="text-gray-900 text-lg font-semibold">₹{(product.discountedPrice ?? product.discountPrice) || product.price}</p>
-                  {(product.discountedPrice ?? product.discountPrice) && (
-                    <p className="text-gray-500 text-sm line-through">₹{product.price}</p>
+
+                {/* Product Name */}
+                <h3 className="mt-2 font-semibold text-gray-900 text-center">
+                  {product.name}
+                </h3>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1 mt-1 justify-center">
+                  {product.brand && (
+                    <span className="bg-blue-100 text-gray-800 text-xs px-2 py-0.5 rounded-full">
+                      {product.brand}
+                    </span>
+                  )}
+                  {product.type && (
+                    <span className="bg-purple-100 text-gray-800 text-xs px-2 py-0.5 rounded-full">
+                      {product.type}
+                    </span>
+                  )}
+                  {product.for && (
+                    <span className="bg-green-100 text-gray-800 text-xs px-2 py-0.5 rounded-full">
+                      {product.for}
+                    </span>
+                  )}
+                  {product.size && (
+                    <span className="bg-yellow-100 text-gray-800 text-xs px-2 py-0.5 rounded-full">
+                      {product.size} kg
+                    </span>
                   )}
                 </div>
-                <p className="text-gray-500 text-sm">{product.stock > 0 ? "In Stock" : "Out of Stock"}</p>
-                <button className="mt-2 w-full bg-gray-900 text-white py-1 rounded hover:bg-[#1E4E8C] transition">
+
+                {/* Price */}
+                <div className="flex items-center gap-2 mt-2">
+                  <span className="text-gray-900 font-semibold text-lg">
+                    ₹{product.discountedPrice || product.price}
+                  </span>
+                  {product.discountedPrice && (
+                    <span className="text-gray-500 line-through text-sm">
+                      ₹{product.price}
+                    </span>
+                  )}
+                </div>
+
+                {/* Stock */}
+                <p
+                  className={`mt-1 text-sm font-medium ${
+                    product.stock ? "text-green-600" : "text-red-600"
+                  }`}
+                >
+                  {product.stock ? "In Stock" : "Out of Stock"}
+                </p>
+
+                <button className="mt-2 w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-800 transition">
                   View Details
                 </button>
               </Link>
             ))}
           </div>
+
+          {filteredProducts.length === 0 && (
+            <p className="text-center text-gray-500 mt-10">
+              No products match the selected filters.
+            </p>
+          )}
         </div>
       </div>
     </div>

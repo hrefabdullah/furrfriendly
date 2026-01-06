@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -35,8 +37,9 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-white min-h-screen py-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-white min-h-screen">
+      <Navbar />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         
         {/* Header */}
         <div className="text-center mb-12">
@@ -169,6 +172,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

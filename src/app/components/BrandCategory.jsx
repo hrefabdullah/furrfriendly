@@ -6,12 +6,11 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function BrandCategory() {
   const brands = [
-    { title: "Cat Food", img: "https://www.purina.in/sites/default/files/2023-05/AGAIL_Adult%20with%20Sardine_FRONT_0.jpg", link: "/store/catFood" },
-    { title: "Cat Grooming", img: "https://m.media-amazon.com/images/I/71GqwnKD4bL._UF1000,1000_QL80_.jpg", link: "/store/catGrooming" },
-    { title: "Cat Toys", img: "https://supertails.com/cdn/shop/products/Frame10889-627733_600x.png?v=1696511732", link: "/store/catToys" },
-    { title: "Dog Food", img: "https://headsupfortails.com/cdn/shop/files/8906002482832_325256e8-336f-4804-a01c-8e4351d124b7.jpg?v=1751632444", link: "/store/dogFood" },
-    { title: "Dog Toys", img: "https://www.petsense.com/cdn/shop/files/1921400_8_3000x.jpg?v=1690480086", link: "/store/dogToys" },
-    { title: "Dog Grooming", img: "https://www.papapawsome.com/cdn/shop/products/tinywow_CHOOSEYOURKIT-01_19581484.webp?v=1681293203&width=1445", link: "/store/dogGrooming" },
+    { title: "Purina Friskies", img: "https://www.purina.in/sites/default/files/2025-09/FRISKIES%20Seafood%20Sensations%202.5kg_C1N1%20%281%29.png", link: "/store/catFood" },
+    { title: "ProDiet", img: "https://www.orangepet.in/cdn/shop/files/ProDiet_Kitten_Ocean_Fish_Milk_Dry_Cat_Food_1.1_Kg_1200x1200_46d6f753-a45c-4f22-a332-eaa1753f8a6d_800x.jpg?v=1757577327", link: "/store/catFood"  },
+    { title: "Purrpet", img: "https://supertails.com/cdn/shop/files/PurepetOceanFishAdultCatFood_6kg_08da2ccc-b9e0-41b3-a944-0a21fc12ec2e_1800x1800.png?v=1767676657", link: "/store/catFood"  },
+    { title: "Royal Cain", img: "https://ik.imagekit.io/supertails/cdn/shop/products/petandparents_2_600x.png?v=1741765949", link: "/store/catFood"  },
+    { title: "Grain Zero", img:"https://m.media-amazon.com/images/I/41IyJX9rPUL._SY300_SX300_QL70_FMwebp_.jpg", link: "/store/catFood"  }
   ];
 
   const scrollRef = useRef(null);

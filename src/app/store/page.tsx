@@ -2,6 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import COLORS from '../theme';
 
 // Define category data
@@ -50,8 +52,9 @@ const deals = [
 
 export default function StorePage() {
   return (
-    <div className="bg-white min-h-screen py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-white min-h-screen">
+      <Navbar />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Pet Store</h1>
@@ -144,6 +147,7 @@ export default function StorePage() {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 }

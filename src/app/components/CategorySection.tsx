@@ -8,7 +8,7 @@ export default function CategorySection() {
   const categories = [
     { 
       title: "Cat Food", 
-      img: "https://www.purina.in/sites/default/files/2023-05/AGAIL_Adult%20with%20Sardine_FRONT_0.jpg", 
+      img: "https://www.purina.in/sites/default/files/2025-09/FRISKIES%20Seafood%20Sensations%202.5kg_C1N1%20%281%29.png", 
       alt: "Cat Food", 
       bg: "from-red-100 to-red-200", 
       link: "/store/catFood",
@@ -56,8 +56,7 @@ export default function CategorySection() {
     },
   ];
 
-  // Ensure a 3x3 grid (9 items) by padding with first items
-  const categories9 = categories.length >= 9 ? categories : [...categories, ...categories.slice(0, 9 - categories.length)];
+  // Ensure a 3x3 grid (9 items) by padding with first itemscategorie];
 
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const scrollByAmount = 320;
@@ -66,18 +65,18 @@ export default function CategorySection() {
     <section className="lg:h-[130vh] py-15 bg-white" aria-label="category">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col">
         {/* Header */}
-        <div className="mb-6 lg:mb-8">
+        <div className="mb-4 lg:mb-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
             <span className="text-gray-900">Top</span> Categories
           </h2>
-          <p className="text-sm sm:text-base text-gray-600 max-w-3xl">
+          <p className="text-sm sm:text-base text-gray-600 max-w-3xl mb-2">
             Explore our comprehensive range of pet products organized by category
           </p>
         </div>
 
         {/* 3x3 Grid fixed to viewport height */}
-        <div className="grid  lg:grid-cols-3 grid-cols-3 grid-rows-3 gap-3 sm:gap-4 lg:gap-6 flex-1 min-h-0">
-          {categories9.map((cat, index) => (
+        <div className="grid  lg:grid-cols-3 grid-cols-3 grid-rows-2 gap-3 sm:gap-4 lg:gap-6 flex-1 min-h-0">
+          {categories.map((cat, index) => (
             <Link 
               href={cat.link} 
               key={`${cat.title}-grid-${index}`} 

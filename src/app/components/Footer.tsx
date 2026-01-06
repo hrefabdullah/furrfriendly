@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo & About */}
           <div>
-            <h2 className={`text-3xl font-bold }`}>FurrFriendly</h2>
+            <h2 className={`text-3xl font-bold }`}>OnlyPets.in</h2>
             <p className={`mt-2 text-sm text-gray-900 opacity-60`}>
               The one-stop shop for all your pet needs.
             </p>
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className={`mt-8 border-t pt-4 text-center text-sm `}>
-          © {new Date().getFullYear()} FurrFriendly. All rights reserved.
+          © {new Date().getFullYear()} onlypets. All rights reserved.
         </div>
       </div>
     </footer>
